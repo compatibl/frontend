@@ -810,7 +810,7 @@
       return fn;
     }
     Event2.chain = chain;
-    const HaltChainable = Symbol("HaltChainable");
+    const HaltChainable = /* @__PURE__ */ Symbol("HaltChainable");
     class ChainableSynthesis {
       constructor() {
         this.steps = [];
@@ -19376,10 +19376,10 @@ Syntax: ${textToMarkedString(entry.syntax)}`;
       }, format: function(t4) {
         if (null === t4 || "object" != typeof t4)
           throw new TypeError('The "pathObject" argument must be of type Object. Received type ' + typeof t4);
-        return function(t5, e3) {
+        return (function(t5, e3) {
           var r3 = e3.dir || e3.root, n3 = e3.base || (e3.name || "") + (e3.ext || "");
           return r3 ? r3 === e3.root ? r3 + n3 : r3 + "/" + n3 : n3;
-        }(0, t4);
+        })(0, t4);
       }, parse: function(t4) {
         e2(t4);
         var r3 = { root: "", dir: "", base: "", ext: "", name: "" };
@@ -19445,9 +19445,9 @@ Syntax: ${textToMarkedString(entry.syntax)}`;
         query;
         fragment;
         constructor(t4, e3, r2, n2, i2, o2 = false) {
-          "object" == typeof t4 ? (this.scheme = t4.scheme || h, this.authority = t4.authority || h, this.path = t4.path || h, this.query = t4.query || h, this.fragment = t4.fragment || h) : (this.scheme = /* @__PURE__ */ function(t5, e4) {
+          "object" == typeof t4 ? (this.scheme = t4.scheme || h, this.authority = t4.authority || h, this.path = t4.path || h, this.query = t4.query || h, this.fragment = t4.fragment || h) : (this.scheme = /* @__PURE__ */ (function(t5, e4) {
             return t5 || e4 ? t5 : "file";
-          }(t4, o2), this.authority = e3 || h, this.path = function(t5, e4) {
+          })(t4, o2), this.authority = e3 || h, this.path = (function(t5, e4) {
             switch (t5) {
               case "https":
               case "http":
@@ -19455,7 +19455,7 @@ Syntax: ${textToMarkedString(entry.syntax)}`;
                 e4 ? e4[0] !== a2 && (e4 = a2 + e4) : e4 = a2;
             }
             return e4;
-          }(this.scheme, r2 || h), this.query = n2 || h, this.fragment = i2 || h, s(this, o2));
+          })(this.scheme, r2 || h), this.query = n2 || h, this.fragment = i2 || h, s(this, o2));
         }
         get fsPath() {
           return m(this, false);
@@ -19579,7 +19579,7 @@ Syntax: ${textToMarkedString(entry.syntax)}`;
       var A2 = r(470);
       const w = A2.posix || A2, x = "/";
       var P;
-      !function(t4) {
+      !(function(t4) {
         t4.joinPath = function(t5, ...e3) {
           return t5.with({ path: w.join(t5.path, ...e3) });
         }, t4.resolvePath = function(t5, ...e3) {
@@ -19597,7 +19597,7 @@ Syntax: ${textToMarkedString(entry.syntax)}`;
         }, t4.extname = function(t5) {
           return w.extname(t5.path);
         };
-      }(P || (P = {}));
+      })(P || (P = {}));
     })(), LIB = n;
   })();
   var { URI: URI22, Utils } = LIB;

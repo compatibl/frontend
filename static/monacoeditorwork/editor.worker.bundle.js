@@ -810,7 +810,7 @@
       return fn;
     }
     Event2.chain = chain;
-    const HaltChainable = Symbol("HaltChainable");
+    const HaltChainable = /* @__PURE__ */ Symbol("HaltChainable");
     class ChainableSynthesis {
       constructor() {
         this.steps = [];
